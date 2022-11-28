@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Sprint1 Tienda de comics</string>
+
+    //Strings Init
+    <string name="btn_init">See comics available!</string>
+
+    //Strings Home
+    <string name="text_title_prods">Comics available</string>
+    <string name="text_title_product1">Products</string>
+
+    <string name="text_desc_product1">Batman: The Long Halloween (1991)</string>
+    <string name="text_desc_product2">Avengers Vol VII: The Beginning of the end</string>
+    <string name="text_desc_product3">Watchmen: Back to square one</string>
+
+
+
+    <string name="btn_info_product">See Comic</string>
+
+    //Into Prod
+    <string name="btn_info_product_back">Go Back</string>
+</resources>
