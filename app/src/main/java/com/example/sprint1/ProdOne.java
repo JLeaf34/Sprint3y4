@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class ProdOne extends AppCompatActivity {
 
     private Button btnProductInfo;
-    private TextView textProductTitle, textProductDescription;
+    private TextView textProductTitle, textProductDescription, textProductPrice;
     private ImageView imgProduct;
 
 
@@ -24,10 +24,13 @@ public class ProdOne extends AppCompatActivity {
         btnProductInfo = (Button) findViewById(R.id.btnProductInfo);
         textProductTitle = (TextView) findViewById(R.id.textProductTitle);
         textProductDescription = (TextView) findViewById(R.id.textProductDescription);
+        textProductPrice = (TextView) findViewById(R.id.textProductPrice);
         imgProduct = (ImageView) findViewById(R.id.imgProduct);
 
         Intent intentIn = getIntent();
         textProductTitle.setText(intentIn.getStringExtra("title"));
+        textProductDescription.setText(intentIn.getStringExtra("productDescription"));
+        textProductPrice.setText(intentIn.getStringExtra("productPrice"));
         int codeImage = intentIn.getIntExtra("codeImage", 0);
         imgProduct.setImageResource(codeImage);
 

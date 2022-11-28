@@ -31,6 +31,12 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ProdOne.class);
                 intent.putExtra("title", textProduct1.getText().toString());
                 intent.putExtra("codeImage", R.drawable.batman_thelonghalloween);
+                intent.putExtra("productDescription", "The acclaimed series " +
+                        "by writer Joseph Loeb and art by Tim Sale. " +
+                        "As the calendar's days stack up, so do the bodies littered in the streets of Gotham City. " +
+                        "A murderer is loose, killing only on holidays. The only man that can stop this fiend? The Dark Knight. " +
+                        "A mystery taking place during Batman's early days of crime fighting.");
+                intent.putExtra("productPrice", "$340.000 COP");
                 startActivity(intent);
             }
         });
@@ -40,6 +46,9 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ProdOne.class);
                 intent.putExtra("title", textProduct2.getText().toString());
                 intent.putExtra("codeImage", R.drawable.avengers_vol_7_1);
+                intent.putExtra("productDescription", "Written by Mark Waid and art by Michael Del Mundo. " +
+                        "Following the shattering after Civil War, the Avengers don't get a breather, for it is time for the Kang War!");
+                intent.putExtra("productPrice", "$75.000 COP");
                 startActivity(intent);
             }
         });
@@ -49,6 +58,9 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ProdOne.class);
                 intent.putExtra("title", textProduct3.getText().toString());
                 intent.putExtra("codeImage", R.drawable.watchmen_10);
+                intent.putExtra("productDescription", "Written by the great Alan Moore and art by Dave Gibbons. " +
+                        "The nation is going into DEFCON 2 and total war is closer than ever before. Will someone, anyone, be able to do something?");
+                intent.putExtra("productPrice", "$500.000 COP (version signed by Alan Moore)");
                 startActivity(intent);
             }
         });

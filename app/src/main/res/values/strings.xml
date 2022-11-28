@@ -8,9 +8,9 @@
     <string name="text_title_prods">Comics available</string>
     <string name="text_title_product1">Products</string>
 
-    <string name="text_desc_product1">Batman: The Long Halloween (1991)</string>
-    <string name="text_desc_product2">Avengers Vol VII: The Beginning of the end</string>
-    <string name="text_desc_product3">Watchmen: Back to square one</string>
+    <string name="text_desc_product1">Batman: The Long Halloween (1996-97)</string>
+    <string name="text_desc_product2">Avengers Vol 7-1 (2017)</string>
+    <string name="text_desc_product3">Watchmen: Vol 10-1 (1987)</string>
 
 
 
@@ -18,4 +18,6 @@
 
     //Into Prod
     <string name="btn_info_product_back">Go Back</string>
+
+
 </resources>
