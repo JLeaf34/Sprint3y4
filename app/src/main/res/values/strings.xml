@@ -19,5 +19,8 @@
     //Into Prod
     <string name="btn_info_product_back">Go Back</string>
 
+    //Product Template
+    <string name="btn_buy_template">Buy Comic</string>
+
 
 </resources>

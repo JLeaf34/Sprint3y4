@@ -28,10 +28,10 @@ public class ProdOne extends AppCompatActivity {
         imgProduct = (ImageView) findViewById(R.id.imgProduct);
 
         Intent intentIn = getIntent();
-        textProductTitle.setText(intentIn.getStringExtra("title"));
-        textProductDescription.setText(intentIn.getStringExtra("productDescription"));
-        textProductPrice.setText(intentIn.getStringExtra("productPrice"));
-        int codeImage = intentIn.getIntExtra("codeImage", 0);
+        textProductTitle.setText(intentIn.getStringExtra("name"));
+        textProductDescription.setText(intentIn.getStringExtra("description"));
+        textProductPrice.setText(intentIn.getStringExtra("price"));
+        int codeImage = intentIn.getIntExtra("image", 0);
         imgProduct.setImageResource(codeImage);
 
 
