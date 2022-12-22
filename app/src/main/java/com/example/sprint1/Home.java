@@ -1,27 +1,33 @@
 package com.example.sprint1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.sprint1.Adapters.ProductAdapter;
+import com.example.sprint1.DBHelper.DBFirebase;
 import com.example.sprint1.Entities.Product;
+import com.example.sprint1.Services.ProductService;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
+    //private DBHelper dbHelper;
+    private DBFirebase dbFirebase;
+    private ProductService productService;
     private ListView listViewProducts;
     private ArrayList<Product> arrayProducts;
     private ProductAdapter productAdapter;
 
-    private Button btnProd1, btnProd2, btnProd3;
-    private TextView textProduct1, textProduct2, textProduct3;
+    private FloatingActionButton btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +35,25 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         arrayProducts = new ArrayList<>();
+        dbFirebase = new DBFirebase();
+        productService = new ProductService();
+        listViewProducts = (ListView) findViewById(R.id.listViewProducts);
 
+        productAdapter = new ProductAdapter(this, arrayProducts);
+        listViewProducts.setAdapter(productAdapter);
+
+        dbFirebase.getData(productAdapter, arrayProducts);
+
+        btnAdd = (FloatingActionButton) findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ProductForm.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
         Product product1 = new Product(R.drawable.batman_thelonghalloween, "Batman: The Long Halloween (1996-97)", "The acclaimed series " +
                 "by writer Joseph Loeb and art by Tim Sale. " +
                 "As the calendar's days stack up, so do the bodies littered in the streets of Gotham City. " +
@@ -56,6 +80,8 @@ public class Home extends AppCompatActivity {
 
         listViewProducts = (ListView) findViewById(R.id.listViewProducts);
         listViewProducts.setAdapter(productAdapter);
+
+         */
 
 
 
@@ -110,4 +136,43 @@ public class Home extends AppCompatActivity {
 
          */
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.actionAdd:
+                Intent intent = new Intent(getApplicationContext(), ProductForm.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.itemMap:
+                intent = new Intent(getApplicationContext(), Maps.class);
+                ArrayList<String> latitudes = new ArrayList<>();
+                ArrayList<String> longitudes = new ArrayList<>();
+
+                for(int i=0; i<arrayProducts.size(); i++){
+                    latitudes.add(String.valueOf(arrayProducts.get(i).getLatitud()));
+                    longitudes.add(String.valueOf(arrayProducts.get(i).getLongitud()));
+                }
+                intent.putStringArrayListExtra("latitudes", latitudes);
+                intent.putStringArrayListExtra("longitudes", longitudes);
+                startActivity(intent);
+                return true;
+
+            case R.id.refresh:
+                Intent intentOn = new Intent(getApplicationContext(), Home.class);
+                startActivity(intentOn);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 }

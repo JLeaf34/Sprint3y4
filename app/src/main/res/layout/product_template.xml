@@ -40,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:paddingBottom="10dp"
+                    android:textColor="@color/white"
                     />
 
                 <TextView
@@ -47,6 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10dp"
+                    android:textColor="@color/white"
                      />
 
                 <TextView
@@ -56,13 +58,42 @@
                     android:paddingBottom="10dp"
                     android:textSize="15sp"
                     android:fontFamily="serif"
+                    android:textColor="@color/white"
                      />
 
-                <Button
-                    android:id="@+id/btnProductTemplate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btn_buy_template" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnProductTemplate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:text="@string/btn_buy_template" />
+
+                    <ImageButton
+                        android:id="@+id/btnUpdateTemplate"
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/edit"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/btnDeleteTemplate"
+                        android:layout_width="40dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        android:background="@drawable/remove" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

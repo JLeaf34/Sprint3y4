@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sprint1 Tienda de comics</string>
+    <string name="app_name">The comic Store</string>
 
     //Strings Init
     <string name="btn_init">See comics available!</string>
@@ -13,14 +13,44 @@
     <string name="text_desc_product3">Watchmen: Vol 10-1 (1987)</string>
 
 
-
     <string name="btn_info_product">See Comic</string>
 
     //Into Prod
     <string name="btn_info_product_back">Go Back</string>
+    <string name="btn_buy">Buy Comic</string>
 
     //Product Template
-    <string name="btn_buy_template">Buy Comic</string>
+    <string name="btn_buy_template">See Comic</string>
+
+    //Product Form
+    <string name="text_title_form">Edit Comic</string>
+    <string name="btn_send_form">Create</string>
+    <string name="text_hint_id_form">Enter Id</string>
+    <string name="text_hint_title_form">Comic Title</string>
+    <string name="text_hint_description_form">Enter a description</string>
+    <string name="text_hint_price_form">Price</string>
+    <string name="text_hint_image_form">Enter image URL</string>
+    <string name="btn_cancel_form">Cancel</string>
+
+    <string name="btn_get_form">Get</string>
+    <string name="btn_delete_form">Delete</string>
+    <string name="btn_update_form">Update</string>
+
+    //Menu
+    <string name="text_menu_add">Add</string>
+
+    //Maps
+    <string name="text_title_maps">Map</string>
+    <string name="btn_exit_maps">Exit</string>
+
+    //Login
+    <string name="text_hint_email_login">Enter Email</string>
+    <string name="text_hint_pass_login">Enter Password</string>
+    <string name="btn_enter_login">Enter</string>
+    <string name="btn_register_login">Register</string>
+
+    //Register
+    <string name="text_hint_confirm_reg">Confirm Password</string>
 
 
 </resources>

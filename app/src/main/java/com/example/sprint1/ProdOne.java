@@ -9,7 +9,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.sprint1.DBHelper.DBFirebase;
+import com.example.sprint1.Services.ProductService;
+import com.squareup.picasso.Picasso;
+
 public class ProdOne extends AppCompatActivity {
+
+    //private DBHelper dbHelper;
+    private DBFirebase dbFirebase;
+    private ProductService productService;
 
     private Button btnProductInfo;
     private TextView textProductTitle, textProductDescription, textProductPrice;
@@ -26,13 +34,29 @@ public class ProdOne extends AppCompatActivity {
         textProductDescription = (TextView) findViewById(R.id.textProductDescription);
         textProductPrice = (TextView) findViewById(R.id.textProductPrice);
         imgProduct = (ImageView) findViewById(R.id.imgProduct);
+        //dbHelper = new DBHelper(this);
+        productService = new ProductService();
 
         Intent intentIn = getIntent();
+        int price = Integer.parseInt(intentIn.getStringExtra("price"));
+        String prices = "USD: $" + price + " COP: $" + price*4700;
+        //String id = intentIn.getStringExtra("id");
+
+        //ArrayList<Product> list = productService.cursorToArray(dbHelper.getDataById(id));
+        //Product product = list.get(0);
+
         textProductTitle.setText(intentIn.getStringExtra("name"));
         textProductDescription.setText(intentIn.getStringExtra("description"));
-        textProductPrice.setText(intentIn.getStringExtra("price"));
+        textProductPrice.setText(prices);
+        Picasso.get().load(intentIn.getStringExtra("image")).into(imgProduct);
+
+        /*
+        Intent intentIn = getIntent();
+
         int codeImage = intentIn.getIntExtra("image", 0);
         imgProduct.setImageResource(codeImage);
+
+         */
 
 
 
